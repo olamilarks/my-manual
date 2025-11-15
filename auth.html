@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   <title>Protected Page</title>
   <script>
-    function checkPassword() {
-      const password = document.getElementById("password").value;
-      const correct = "Audit@2025";  // <<< CHANGE THIS PASSWORD
+  function checkPassword() {
+    const input = document.getElementById("password").value;
+    const correct = "ICPCAudit@2025"; // change password
 
-      if (password === correct) {
-       sessionStorage.setItem("authenticated", "yes");
-       window.location.href = "index.html";
- // send user to main docs
-      } else {
-        alert("Incorrect password.");
-      }
+    if (input === correct) {
+      sessionStorage.setItem("authenticated", "true");
+      window.location.replace("index.html");
+    } else {
+      alert("Incorrect password.");
     }
-  </script>
+  }
+</script>
+
 
   <style>
     body { 
