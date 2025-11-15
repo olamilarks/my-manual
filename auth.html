@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Protected Page</title>
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("password").value;
+      const correct = "ICPC2025";  // <<< CHANGE THIS PASSWORD
+
+      if (password === correct) {
+       sessionStorage.setItem("authenticated", "yes");
+       window.location.href = "index.html";
+ // send user to main docs
+      } else {
+        alert("Incorrect password.");
+      }
+    }
+  </script>
+
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      display: flex; 
+      height: 100vh; 
+      justify-content: center; 
+      align-items: center; 
+      background: #f1f1f1;
+    }
+    .box { 
+      background: white; 
+      padding: 30px; 
+      border-radius: 10px; 
+      box-shadow: 0 0 10px rgba(0,0,0,0.3); 
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h3>Enter Password</h3>
+    <input id="password" type="password" placeholder="Password" />
+    <button onclick="checkPassword()">Login</button>
+  </div>
+</body>
+</html>
